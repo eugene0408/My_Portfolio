@@ -1,0 +1,202 @@
+// USER VARIABLES SECTION
+
+$orange: #FFAA17
+$red: #F44336
+$dark-bg: #1D2122
+$fontsize: 18px // Body Font Size
+$textcolor: #000 // Text Color
+$lineheight: 1.65 // Document Line Height
+$mainfont: rajdhani-w2, rajdhani-w, rajdhani, sans-serif 
+$systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 30px
+$gutter: $grid-gutter-width
+
+// IMPORT SECTION
+ // Bootstrap Reboot collection
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss'
+// Bootstrap Breakpoints mixin
+@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss'
+//  Bootstrap Grid 
+@import 'node_modules/bootstrap/scss/bootstrap-grid.scss' 
+// @import 'node_modules/bootstrap/scss/utilities/_sizing.scss' // Optional Bootstrap Utilites
+
+// Swiper
+@import 'node_modules/swiper/swiper.scss'
+// AOS
+@import 'node_modules/aos/dist/aos'
+
+
+
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+	@font-face
+		font-family: $fname
+		font-style: $fstyle
+		font-weight: $fweight
+		src: url($furl) format('woff2')
+
+// Font Weights:
+// Thin, Hairline-------100
+// Extra Light, Ultra Light-------200
+// Light------------300
+// Normal, Regular---------400
+// Medium-----------500
+// Semi Bold, Demi Bold---------600
+// Bold-----------------700
+// Extra Bold, Ultra Bold---------800
+// Black, Heavy--------------900
+
+@include font('rajdhani-w2', normal, 300, '../fonts/rajdhani-light-webfont.woff2')
+@include font('rajdhani-w', normal, 300, '../fonts/rajdhani-light-webfont.woff')
+@include font('rajdhani', normal, 300, '../fonts/Rajdhani-Light.ttf')
+@include font('rajdhani-w2', normal, 400, '../fonts/rajdhani-regular-webfont.woff2')
+@include font('rajdhani-w', normal, 400, '../fonts/rajdhani-regular-webfont.woff')
+@include font('rajdhani', normal, 400, '../fonts/Rajdhani-Regular.ttf')
+@include font('rajdhani-w2', normal, 500, '../fonts/rajdhani-medium-webfont.woff2')
+@include font('rajdhani-w', normal, 500, '../fonts/rajdhani-medium-webfont.woff')
+@include font('rajdhani', normal, 500, '../fonts/Rajdhani-Medium.ttf')
+@include font('rajdhani-w2', normal, 600, '../fonts/rajdhani-semibold-webfont.woff2')
+@include font('rajdhani-w', normal, 600, '../fonts/rajdhani-semibold-webfont.woff')
+@include font('rajdhani', normal, 600, '../fonts/Rajdhani-Semibold.ttf')
+@include font('rajdhani-w2', normal, 700, '../fonts/rajdhani-bold-webfont.woff2')
+@include font('rajdhani-w', normal, 700, '../fonts/rajdhani-bold-webfont.woff')
+@include font('rajdhani', normal, 700, '../fonts/Rajdhani-Bold.ttf')
+
+
+// GENERAL DOCUMENT STYLES
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $orange
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+body
+	font-family: $mainfont
+	font-size: $fontsize
+	line-height: $lineheight
+	color: $textcolor
+	min-width: 320px
+	position: relative
+	overflow-x: hidden
+a
+	text-decoration: none
+	color: #000
+	&:hover, &:focus
+		color: #000
+ul 
+	list-style: none
+.red
+	color: $red
+.orange
+	color: $orange
+.white
+	color: #fff
+
+.cover
+	position: absolute
+	left: 0
+	right: 0
+	top: 0
+	bottom: 0
+	background: rgba(#000, .6)
+
+.sect-header
+	font-size: 32px
+	font-weight: 500
+	text-align: center
+	margin-top: 4em
+	padding-bottom: 3em
+	text-transform: uppercase
+	position: relative
+	.left, .right
+		font-size: 36px
+	&:hover
+		span 
+			opacity: 1
+		.left, .right
+			transform: translateX(0)
+		.slash, .underline
+			transform: translateY(0)
+	+media-breakpoint-down(lg)
+		font-size: 28px
+		padding-bottom: 2em
+
+
+
+.left, .right, .slash, .underline
+	display: inline-block
+	opacity: 0
+	font-weight: 400
+.left
+	transform: translateX(-20px)
+	transition: all .3s ease-in-out
+.right
+	transform: translateX(20px)
+	transition: all .3s ease-in-out
+.slash, .underline
+	transform: translateY(10px)
+	transition: all .2s ease-in
+
+
+
+
+.pos-rel
+	position: relative
+
+
+
+.preloader
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	background: $dark-bg
+	z-index: 10000
+	opacity: 1
+	display: flex
+	justify-content: center
+	align-items: center
+	transition: opacity .3s ease
+	&-content
+		display: inline-block
+		height: 80px
+		width: 80px
+		position: relative
+		div 
+			display: inline-block
+			position: absolute
+			left: 8px
+			width: 16px
+			background: $orange
+			animation: preloader-anim 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite
+			&:nth-child(1)
+				left: 8px
+				animation-delay: -.24s
+			&:nth-child(2)
+				left: 32px
+				animation-delay: -.12s
+			&:nth-child(3)
+				left: 56px
+				animation-delay: 0
+@keyframes preloader-anim
+	0%
+		top: 8px
+		height: 64px
+	50%, 100%
+		top: 24px
+		height: 32px
+	

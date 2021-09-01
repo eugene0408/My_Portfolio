@@ -1,0 +1,318 @@
+.header
+    height: 100vh
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    position: relative
+
+    // ### Topline 
+
+.top-navigation
+    position: fixed
+    left: 0
+    right: 0
+    z-index: 999
+.topline
+    display: flex
+    align-items: center
+    height: 70px
+    background: #fff
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 )
+    padding: 1em
+    position: relative
+    transition: .2s ease-in-out
+    .avatar
+        display: flex
+        align-items: center
+        &-image
+            height: 50px
+            width: 50px
+            border-radius: 50%
+            overflow: hidden
+            background-position: center
+            background-size: 125%
+            background-color: rgba($orange, .25)
+            display: inline-block
+            transition: .3s
+        &-text 
+            font-weight: 500
+            font-size: 22px
+            display: inline-block
+            margin-left: .5em
+        &:hover
+            .avatar-image
+                background-color: rgba($orange, .5)
+    &-menu
+        display: inline-block
+        position: relative
+        margin-left: auto
+        font-weight: 400
+        font-size: 18px
+        text-transform: uppercase
+        &__item
+            margin-left: 1em
+            transform-style: preserve-3d
+            transform: perspective(1000px)
+        span 
+            font-size: 22px 
+        .orange
+            transition: .4s ease-in
+
+ 
+    .topline-menu__item:hover
+        span
+            opacity: 1
+        .left
+            transform: translateX(0) 
+        .right
+            transform: translateX(0)
+        .orange
+            transform: translateY(0)
+  
+    +media-breakpoint-down(xl)
+        height: 60px
+        padding: .3em
+        .avatar
+            &-text 
+                font-size: 18px
+        &-menu
+            font-size: 16px
+            &__item
+                margin-left: 0
+    +media-breakpoint-down(lg)         
+        position: absolute
+        top: 0 
+        left: 0 
+        flex-direction: column
+        align-items: end
+        width: 50%
+        height: 98vh
+        transform: translateX(-120%)
+        .avatar
+            position: relative
+            margin-top: 40%
+            margin-left: 1em
+            padding-bottom: .5em
+            &::after
+                content: ''
+                position: absolute
+                bottom: 0
+                height: 1px
+                width: 100%
+                background: rgba(#000, .5)
+
+        &-menu
+            width: 100%
+            display: flex
+            flex-direction: column
+            justify-content: center
+            height: 60%
+            font-size: 18px
+            &__item
+                display: block
+                margin-left: 1em
+    +media-breakpoint-down(sm)
+        width: 60%
+    @media screen and ( max-width: 480px )
+        width: 75%
+        
+
+.topline-git
+    background: $orange
+    height: 70px
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: center
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 )
+    transition: .2s ease-in-out
+    &__icon
+        height: 35px
+        width: 35px
+        position: absolute
+        left: 12%
+        transition: .3s ease
+        svg
+            height: 100%
+            width: 100%
+            transition: .3s
+    &__text
+        font-weight: 400
+        font-size: 18px
+        transition: .3s
+        .left, .right
+            color: #fff
+    &:hover
+        background: rgba($red, 1)
+        .topline-git__icon
+            svg
+                fill: #fff
+        .topline-git__text
+            color: #fff
+            span 
+                opacity: 1
+            .left, .right
+                transform: translateX(0)
+            .slash, .underline
+                transform: translateY(0)
+    +media-breakpoint-down(lg)
+        height: 60px
+        &__icon
+            height: 28px 
+            width: 28px
+            left: 6%
+        &__text
+            margin-left: 2em
+            font-size: 16px
+    +media-breakpoint-down(md)
+        height: 50px
+    @media screen and ( max-width: 480px )
+        width: 50px
+        float: right
+        &__icon
+            position: relative
+            left: 0
+        &__text
+            display: none
+            
+.burger
+    position: relative
+    display: none
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    height: 50px
+    width: 50px
+    background: #fff
+    border-radius: 10px
+    cursor: pointer
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 )
+    transition: all .5s ease-in
+    div
+        height: 3px
+        width: 30px
+        background: #000
+        margin-top: 2.5px
+        margin-bottom: 2.5px
+        transition: all .5s ease
+    +media-breakpoint-down(lg)
+        display: flex
+
+.topline-scrolled
+    margin-top: 0
+    border-radius: 0 0 10px 10px 
+    +media-breakpoint-down(lg)
+        margin-top: 5px
+        border-radius: 10px
+        
+.topline-home
+    margin-top: 10px
+    border-radius: 10px
+    +media-breakpoint-down(lg)
+        margin-top: 5px
+
+.topline-active
+    transform: translateX(0)
+
+.burger-active
+    position: absolute
+    left: 1em
+    box-shadow: none
+    .line1
+        transform: rotate(-45deg) translate(-5px, 6px)
+    .line2
+        opacity: 0
+    .line3
+        transform: rotate(45deg) translate(-5px, -6px)
+
+
+
+
+    // ### Header ###
+
+.header-content
+    color: #fff
+    position: relative
+    margin-top: 40vh
+    &__skills
+        display: flex
+        justify-content: center
+        list-style: none
+        text-transform: uppercase
+        font-size: 21px
+        width: 100%
+        margin-bottom: 0
+        line-height: 1
+        .red
+            margin: 0 .2em
+    &__title
+        font-size: 72px
+        font-weight: 700
+        text-align: center
+    +media-breakpoint-down(lg)
+        &__skills
+            font-size: 18px
+        &__title
+            font-size: 60px
+    +media-breakpoint-down(md)
+        &__title
+            font-size: 50px
+
+.down-arrow
+    position: absolute
+    bottom: 2em
+    width: 100%
+    display: flex
+    justify-content: center
+    &__angle
+        display: flex
+        justify-content: center
+        align-items: center
+        height: 65px
+        width: 65px
+        border-bottom: 2px solid #fff
+        border-right: 2px solid #fff
+        transform: rotateZ(45deg)
+        transition: all .2s ease-in
+        &:hover
+            border-bottom: 2px solid $orange
+            border-right: 2px solid $orange
+    &__line
+        display: inline-block
+        height: 60px
+        width: 2px
+        background: #fff
+        animation: lineUpDown 2s linear infinite
+    +media-breakpoint-down(lg) 
+        .down-arrow__angle
+            height: 45px
+            width: 45px
+        .down-arrow__line
+            height: 45px
+    +media-breakpoint-down(md) 
+        bottom: 1em
+        .down-arrow__angle
+            height: 30px
+            width: 30px
+        .down-arrow__line
+            height: 30px
+            animation: lineUpDownSm 2s linear infinite
+
+    
+@keyframes lineUpDown  // # Down Arrow Animation #
+    0% 
+         transform: rotateZ(-45deg) translateY(-40px)
+    50%
+         transform: rotateZ(-45deg) translateY(-10px)
+    100%
+         transform: rotateZ(-45deg) translateY(-40px)
+
+
+@keyframes lineUpDownSm  // # Down Arrow Animation small size #
+    0% 
+         transform: rotateZ(-45deg) translateY(-20px)
+    50%
+         transform: rotateZ(-45deg) translateY(-5px)
+    100%
+         transform: rotateZ(-45deg) translateY(-20px)
+   
