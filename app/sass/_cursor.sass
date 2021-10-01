@@ -1,0 +1,20 @@
+.cursor
+	height: 25px 
+	width: 25px
+	background: $orange
+	border: 1px solid $orange
+	border-radius: 50%
+	position: absolute
+	display: inline-block
+	z-index: 10000
+	transition: left .15s, top .15s, opacity .1s ease-in-out
+	pointer-events: none
+	transform: translate(-50%, -50%)
+.cursor-onlink
+	background: rgba(#000, .2)
+	height: 50px
+	width: 50px
+.cursor-oninput
+	background: rgba(#000, .04)
+	border:  2px solid rgba(#000, .02)
+

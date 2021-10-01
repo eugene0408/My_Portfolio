@@ -29,28 +29,17 @@ window.onload = function(){
 
 AOS.init();
 
-
-
-
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
 
+	const screenWidth = window.innerWidth,
+		topline = document.querySelector('.topline'),
+		ava = document.querySelector('.avatar'),
+		toplineItems = document.querySelectorAll('.topline-menu__item'),
+		toplineGit = document.querySelector('.topline-git'),
+		burger = document.querySelector('.burger');
 
-const screenWidth = window.innerWidth,
-	  topline = document.querySelector('.topline'),
-	  ava = document.querySelector('.avatar'),
-	  toplineItems = document.querySelectorAll('.topline-menu__item'),
-	  toplineGit = document.querySelector('.topline-git'),
-	  burger = document.querySelector('.burger');
-
-
-
-// ##########  Topline changing on scroll    ##################
-window.addEventListener('scroll', function(e){
+	// Topline changing on scroll
+	function toplineScroll(){
 		if(window.scrollY > 200){
 			topline.classList.remove('topline-home')
 			toplineGit.classList.remove('topline-home')
@@ -62,96 +51,83 @@ window.addEventListener('scroll', function(e){
 			topline.classList.add('topline-home')
 			toplineGit.classList.add('topline-home')
 		}
+	}
+
+	window.addEventListener('scroll', ()=> {
+		toplineScroll();
+	});
+
+
+	// Diffrent delay for AOS animations of skills 
+	function skillsAnimateDelay(){
+		let skills = document.querySelectorAll('.s-skills__item')
+
+		for(let i = 1; i < skills.length; i+=4){
+			skills[i].setAttribute('data-aos-delay', '100')
+		}
+		for(let i = 2; i < skills.length; i+=4){
+			skills[i].setAttribute('data-aos-delay', '200')
+		}
+		for(let i = 3; i < skills.length; i+=4){
+			skills[i].setAttribute('data-aos-delay', '300')
+		}
+	}
+	skillsAnimateDelay()
+
+
+	// Burger Menu
+	function burgerMenuSlide(){
+		burger.addEventListener('click', ()=>{
+			topline.classList.toggle('topline-active')
+			burger.classList.toggle('burger-active')
+		});
 	
-});
+
+		function hideOnClick(){
+			topline.classList.remove('topline-active')
+			burger.classList.remove('burger-active')
+		};
+
+		if(screenWidth < 992){
+			toplineItems.forEach((element) => {
+				element.addEventListener('click', hideOnClick);
+			});
+
+			ava.addEventListener('click', hideOnClick);
+		};
+	};
+
+	burgerMenuSlide()
 
 
-
-// ###### Diffrent delay for AOS animations of skills ######
-function skillsAnimateDelay(){
-	let skills = document.querySelectorAll('.s-skills__item')
-
-	for(let i = 1; i < skills.length; i+=4){
-		skills[i].setAttribute('data-aos-delay', '100')
-	}
-	for(let i = 2; i < skills.length; i+=4){
-		skills[i].setAttribute('data-aos-delay', '200')
-	}
-	for(let i = 3; i < skills.length; i+=4){
-		skills[i].setAttribute('data-aos-delay', '300')
-	}
-}
-skillsAnimateDelay()
-
-
-// ########   Burger Menu #########
-
-function burgerMenuSlide(){
-	burger.addEventListener('click', ()=>{
-
-		topline.classList.toggle('topline-active')
-		burger.classList.toggle('burger-active')
+	/* Plugins Settings 
+	---------------------------------------------------------------------- */
+	// Slider Swiper 
+	const swiper = new Swiper('.swiper-container', {
+		loop: true,
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+		observer: true, 
+		observeParents: true,
 
 	});
-  
 
-	function hideOnClick(){
-		topline.classList.remove('topline-active')
-		burger.classList.remove('burger-active')
-	};
+	// Tilt Animations 
+	VanillaTilt.init(document.querySelectorAll('.skill-tilt'),{
+		max: 40,
+		speed: 400,
+	});
 
-	if(screenWidth < 992){
+	VanillaTilt.init(document.querySelectorAll(['.slider-screen', '.slider-descr__items-wrapper', '.mail-form__button']),{
+		speed: 700,
+	});
 
-		toplineItems.forEach((element) => {
-			element.addEventListener('click', hideOnClick);
-		});
-
-		ava.addEventListener('click', hideOnClick);
-
-	};
-};
-
-burgerMenuSlide()
-
-
-
-
-
-
-/**  ###################################
-		Plugins Settings
-	########################################
-*/
-// ######### Slider Swiper Settings #########
-const swiper = new Swiper('.swiper-container', {
-	loop: true,
-	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev',
-	},
-	observer: true, 
-	observeParents: true,
-
-});
-
-
-// ######## Tilt Animations Settings #############
-VanillaTilt.init(document.querySelectorAll('.skill-tilt'),{
-	max: 40,
-	speed: 400,
-});
-
-VanillaTilt.init(document.querySelectorAll(['.slider-screen', '.slider-descr__items-wrapper', '.mail-form__button']),{
-	speed: 700,
-});
-
-VanillaTilt.init(document.querySelector('footer'),{
-	speed: 600,
-	max: 10,
-});
-
-
-
+	VanillaTilt.init(document.querySelector('footer'),{
+		speed: 600,
+		max: 10,
+	});
 
 });
 
