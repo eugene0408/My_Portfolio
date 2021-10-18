@@ -35,7 +35,8 @@
             display: inline-block
             transition: .3s
         &-text 
-            font-weight: 500
+            font-family: $open-sans
+            font-weight: 700
             font-size: 22px
             display: inline-block
             margin-left: .5em
@@ -46,7 +47,8 @@
         display: inline-block
         position: relative
         margin-left: auto
-        font-weight: 400
+        font-family: $open-sans
+        font-weight: 700
         font-size: 18px
         text-transform: uppercase
         &__item
@@ -138,7 +140,8 @@
             width: 100%
             transition: .3s
     &__text
-        font-weight: 400
+        font-family: $open-sans
+        font-weight: 700
         font-size: 18px
         transition: .3s
         .left, .right
@@ -156,7 +159,7 @@
                 transform: translateX(0)
             .slash, .underline
                 transform: translateY(0)
-    +media-breakpoint-down(lg)
+    +media-breakpoint-down(xl)
         height: 60px
         &__icon
             height: 28px 

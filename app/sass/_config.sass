@@ -7,6 +7,7 @@ $fontsize: 18px // Body Font Size
 $textcolor: #000 // Text Color
 $lineheight: 1.65 // Document Line Height
 $mainfont: rajdhani-w2, rajdhani-w, rajdhani, sans-serif 
+$open-sans: open-sans-condensed-w2, open-sans-condensed, sans-serif
 $systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
 
 // Bootstrap compatible gutter variable => $gutter
@@ -20,14 +21,11 @@ $gutter: $grid-gutter-width
 @import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss'
 //  Bootstrap Grid 
 @import 'node_modules/bootstrap/scss/bootstrap-grid.scss' 
-// @import 'node_modules/bootstrap/scss/utilities/_sizing.scss' // Optional Bootstrap Utilites
 
 // Swiper
 @import 'node_modules/swiper/swiper.scss'
 // AOS
 @import 'node_modules/aos/dist/aos'
-
-
 
 
 // FONTS LOAD SECTION
@@ -65,6 +63,11 @@ $gutter: $grid-gutter-width
 @include font('rajdhani-w2', normal, 700, '../fonts/rajdhani-bold-webfont.woff2')
 @include font('rajdhani-w', normal, 700, '../fonts/rajdhani-bold-webfont.woff')
 @include font('rajdhani', normal, 700, '../fonts/Rajdhani-Bold.ttf')
+@include font('open-sans-condensed', normal, 700, '../fonts/OpenSansCondensed-Bold.ttf')
+@include font('open-sans-condensed-w2', normal, 700, '../fonts/OpenSansCondensed-Bold.woff2')
+@include font('open-sans-condensed', normal, 300, '../fonts/OpenSansCondensed-Light.ttf')
+@include font('open-sans-condensed-w2', normal, 300, '../fonts/OpenSansCondensed-Light.woff2')
+
 
 
 // GENERAL DOCUMENT STYLES
@@ -115,7 +118,8 @@ ul
 
 .sect-header
 	font-size: 32px
-	font-weight: 500
+	font-family: $open-sans
+	font-weight: 700
 	text-align: center
 	margin-top: 4em
 	padding-bottom: 3em
@@ -139,7 +143,7 @@ ul
 .left, .right, .slash, .underline
 	display: inline-block
 	opacity: 0
-	font-weight: 400
+	font-weight: 700
 .left
 	transform: translateX(-20px)
 	transition: all .3s ease-in-out

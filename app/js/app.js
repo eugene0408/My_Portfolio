@@ -1,11 +1,12 @@
+
 import AOS from 'aos';
 import VanillaTilt from 'vanilla-tilt';
-import Swiper, {Navigation} from 'swiper';
-Swiper.use([Navigation]);
+import Swiper, {Navigation, Pagination} from 'swiper';
+Swiper.use([Navigation, Pagination]);
 
 
 
-// ### Preloader ###
+//  Preloader 
 window.onload = function(){
 	const preloader = document.querySelector('.preloader')
 	const downArrow = document.querySelector('.down-arrow__link')
@@ -100,6 +101,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		navigation: {
 			nextEl: '.swiper-button-next',
 			prevEl: '.swiper-button-prev',
+		},
+		pagination:{
+			el: '.swiper-pagination',
+			type: 'bullets',
+			clickable: true
 		},
 		observer: true, 
 		observeParents: true,

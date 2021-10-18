@@ -63,8 +63,9 @@
             overflow: hidden
             transition: .5s ease-in-out
         &__title
+            font-family: $open-sans
             font-size: 28px
-            font-weight: 500
+            font-weight: 700
             position: relative
             color: #000
             ul
@@ -82,6 +83,8 @@
         &:hover
             transform: translateZ(40px)
         h2
+            font-family: $open-sans
+            font-weight: 700
             font-size: 36px
             color: #fff
             text-transform: uppercase
@@ -109,8 +112,9 @@
                 path 
                     fill: #fff
         &__item-content, .red
+            font-family: $open-sans
             font-size: 18px
-            font-weight: 500
+            font-weight: 700
         &__item-content
             background: rgba(#fff, .3)
             border-radius: 10px
@@ -190,15 +194,33 @@
                 a 
                     line-height: 1.1
   
-
-
-
-
+.icons
+    font-family: $open-sans
+    font-weight: 300
+    display: flex
+    justify-content: center
+    a
+        margin-left: .5em
+        display: flex
+        align-items: center
+        svg
+            margin-right: .2em
+            height: 22px
+            width: 22px
+            fill: $red
+            transition: .2s ease
+        &:hover
+            svg
+                fill: $orange
+    +media-breakpoint-down(sm)
+        margin-top: 40%
 .copyright
     p
         text-align: center
+        font-family: $open-sans
+        font-weight: 300
     +media-breakpoint-down(sm)
-        padding-top: 3em
+        padding-top: .5em
         padding-bottom: 1em
 
             
