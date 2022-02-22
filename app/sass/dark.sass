@@ -1,0 +1,76 @@
+@import config
+
+
+
+body 
+    background: #222831
+
+// ------------ Topline -----------
+
+.topline
+    background: $dark-bg
+    box-shadow: none
+    color: #fff
+    .avatar
+        &-image
+            background-color: rgba($orange, .8)
+        &-text
+            color: #fff
+        &:hover
+            .avatar-image
+                background-color: rgba($orange, 1)
+    &-menu__item
+        color: #fff
+        &:hover
+            color: #fff
+
+.burger
+    background: $dark-bg
+    div 
+        background: #fff
+
+.sect-header
+    color: #fff
+
+// ------ Skills Section --------
+
+.s-skills__item
+    svg
+        fill: #fff
+    h4
+        color: #fff
+    &:hover
+        .s-skills__item-bg
+            background: $orange
+            svg
+                path 
+                    fill: #000
+
+// -------- Portfolio Slider -----------
+
+.slider-descr
+    color: #fff
+    &__items-wrapper
+        color: #000
+        background: #FDFAF6
+
+// ---------- Form --------------
+.mail-form-wrapper
+    .mail-form
+        input, textarea
+            background-color: #f6f6f6
+            color: #000
+            box-shadow: none
+
+// ---------  Footer ------------
+
+ .footer
+     &-avatar
+         background: #f6f6f6   
+
+.icons, .copyright
+    color: #fff
+    a
+        color: #fff
+        &:hover
+            color: #fff

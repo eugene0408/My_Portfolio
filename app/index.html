@@ -13,6 +13,8 @@
 	<meta property="og:image" content="images/dist/preview.jpg">
 	
 	<link rel="stylesheet" href="css/main.min.css">
+	<!-- <link rel="stylesheet" href="css/light.min.css" media="(prefers-color-scheme: light)">
+	<link rel="stylesheet" href="css/dark.min.css" media="(prefers-color-scheme: dark)"> -->
 
 </head>
 
@@ -163,6 +165,19 @@
                     </div>                
                 </div>
 
+
+                <!--  SASS
+                -------------------------------------------------------- -->
+                <div class="col-4 col-md-3">
+                    <div class="s-skills__item" data-aos="zoom-in-left">
+                        <div class="s-skills__item-bg skill-tilt">
+                            <!--#include virtual="/parts/_sass-svg.html" -->
+                        </div>
+                        <h4>sass</h4>
+                    </div>
+                </div>
+
+
                 <!--  JS
                 -------------------------------------------------------- -->
                 <div class="col-4 col-md-3">
@@ -174,14 +189,14 @@
                     </div>
                 </div>
 
-                <!--  SASS
+                <!--  REACT
                 -------------------------------------------------------- -->
                 <div class="col-4 col-md-3">
                     <div class="s-skills__item" data-aos="zoom-in-left">
                         <div class="s-skills__item-bg skill-tilt">
-                            <!--#include virtual="/parts/_sass-svg.html" -->
+                        <!--#include virtual="/parts/_react-svg.html" -->
                         </div>
-                        <h4>sass</h4>
+                        <h4>react</h4>
                     </div>
                 </div>
 
@@ -195,6 +210,17 @@
                             </div>
                             <h4>jquery</h4>                     
                         </div>
+                </div>
+
+                <!--  BOOTSTRAP
+                -------------------------------------------------------- -->
+                <div class="col-4 col-md-3">
+                    <div class="s-skills__item" data-aos="zoom-in-left">
+                        <div class="s-skills__item-bg skill-tilt">
+                            <!--#include virtual="/parts/_bootstrap-svg.html" -->
+                        </div>
+                        <h4>bootstrap</h4>                                           
+                    </div>
                 </div>
 
                 <!--  GULP
@@ -215,31 +241,31 @@
                             <div class="s-skills__item-bg skill-tilt">                               
                                 <!--#include virtual="/parts/_github-svg.html" -->
                             </div>
-                            <h4>github</h4>                                           
+                            <h4>git</h4>                                           
                         </div>
                 </div>
 
-                <!--  BOOTSTRAP
-                -------------------------------------------------------- -->
-                <div class="col-4 col-md-3">
-                        <div class="s-skills__item" data-aos="zoom-in-left">
-                            <div class="s-skills__item-bg skill-tilt">
-                                <!--#include virtual="/parts/_bootstrap-svg.html" -->
-                            </div>
-                            <h4>bootstrap</h4>                                           
-                        </div>
-                </div>
-                
-         
+                   
                 <!--  RESPONSIVE
                 -------------------------------------------------------- -->
-                <div class="col-4 col-md-3">
+                <!-- <div class="col-4 col-md-3">
                         <div class="s-skills__item" data-aos="zoom-in-left">
-                            <div class="s-skills__item-bg skill-tilt">                                
-                                <!--#include virtual="/parts/_responsive-svg.html" -->
-                            </div>
+                            <div class="s-skills__item-bg skill-tilt">                                 -->
+                                <!--  #include virtual="/parts/_responsive-svg.html" -->
+                            <!-- </div>
                             <h4>responsive</h4>                                           
                         </div>
+                </div> -->
+
+                <!-- UPLOAD
+                ----------------------------------------------------------->
+                <div class="col-4 col-md-3">
+                    <div class="s-skills__item" data-aos="zoom-in-left">
+                        <div class="s-skills__item-bg skill-tilt">
+                            <!--#include virtual="/parts/_upload-svg.html" -->
+                        </div>
+                        <h4>deploying</h4>                                           
+                    </div>
                 </div>
 
                 <!--  FIGMA
@@ -264,16 +290,7 @@
                         </div>
                 </div>
 
-                <!-- UPLOAD
-                ----------------------------------------------------------->
-                <div class="col-4 col-md-3">
-                        <div class="s-skills__item" data-aos="zoom-in-left">
-                            <div class="s-skills__item-bg skill-tilt">
-                                <!--#include virtual="/parts/_upload-svg.html" -->
-                            </div>
-                            <h4>deploying</h4>                                           
-                        </div>
-                </div>
+
 
             
         </div>
@@ -300,8 +317,8 @@
                 -------------------------------------------------------------- -->
                 <div class="swiper-slide">
 
-                    <div class="container">
-                        <div class="row">
+                    <div class="container ofl-vis">
+                        <div class="row ofl-vis">
                             <div class="col-md-6 col-12 pt-4 pb-4 pos-rel turned">
 
                                 <div class="slider-screen" style="background-image: url(images/dist/honeyShop.png);">
@@ -351,32 +368,30 @@
                 </div>
 
 
-                <!-- Age counter
-                ------------------------------------------------------------------ -->
+                <!-- Age Counter React
+                -------------------------------------------------------------- -->
                 <div class="swiper-slide">
 
-                    <div class="container">
-                        <div class="row">
+                    <div class="container ofl-vis">
+                        <div class="row ofl-vis">
                             <div class="col-md-6 col-12 pt-4 pb-4 pos-rel turned">
 
-                                <div class="slider-screen" style="background-image: url(images/dist/ageCounter.png);">
-                                    <div class="slider-screen-mini" style="background-image: url(images/dist/ageCounter-mobile.png);">
+                                <div class="slider-screen" style="background-image: url(images/dist/ageCounterReact.png);">
+                                    <div class="slider-screen-mini" style="background-image: url(images/dist/ageCounterReact-mobile.png);">
                                     </div>
                                 </div>
                               
 
                             </div>
-                            <div class="col-md-4 offset-md-1">
+                            <div class="col-md-4 offset-md-1 col-12">
                                 <div class="slider-descr">
-                                    <h4 class="slider-descr__header">age counter</h4>
-                                    <p class="slider-descr__text">Shows how many years, months and days a person is today  </p>
+                                    <h4 class="slider-descr__header">Age Counter React </h4>
+                                    <p class="slider-descr__text">Calculating how many full years, months, days, hours and minutes person has at the moment</p>
                                    <div class="slider-descr__items-wrapper">
                                         <p>made with:</p>
                                         <div class="slider-descr__icons">
-                                            <!--#include virtual="/parts/_html-svg.html" -->
-                                            <!--#include virtual="/parts/_sass-svg.html" -->
-                                            <!--#include virtual="/parts/_js-svg.html" -->
-                                            <!--#include virtual="/parts/_bootstrap-svg.html" -->
+                                            <!--#include virtual="/parts/_react-svg.html" -->
+                                            <!--#include virtual="/parts/_css-svg.html" -->
                                             <!--#include virtual="/parts/_responsive-svg.html" -->
                                         </div>
                                    </div>
@@ -384,12 +399,12 @@
 
                                     <div class="slider-descr__items-wrapper">
                                         <div class="slider-descr__links">
-                                            <a href="http://age-counter.tk" target="_blank" class="slider-link">
+                                            <a href="https://age-counter.netlify.app" target="_blank" class="slider-link">
                                                 LiveSite <!--#include virtual="/parts/_internet-svg.html" -->
                                             </a>
                                             <div class="red-separator"></div>
 
-                                            <a href="https://github.com/eugene0408/age_counter" target="_blank" class="slider-link">
+                                            <a href="https://github.com/eugene0408/age-counter-React" target="_blank" class="slider-link">
                                                 <!--#include virtual="/parts/_github-svg.html" -->
                                                 GitHub 
                                             </a>
@@ -403,6 +418,9 @@
                     </div>
 
                 </div>
+
+
+
 
 
                 <!-- Kompremont
@@ -501,6 +519,70 @@
                                                 <!--#include virtual="/parts/_github-svg.html" -->
                                                 GitHub 
                                             </a>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                                <!-- Age counter
+                ------------------------------------------------------------------ -->
+                <div class="swiper-slide">
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 col-12 pt-4 pb-4 pos-rel turned">
+
+                                <div class="slider-screen" style="background-image: url(images/dist/ageCounter.png);">
+                                    <div class="slider-screen-mini" style="background-image: url(images/dist/ageCounter-mobile.png);">
+                                    </div>
+                                </div>
+                              
+
+                            </div>
+                            <div class="col-md-4 offset-md-1">
+                                <div class="slider-descr">
+                                    <h4 class="slider-descr__header">age counter js</h4>
+                                    <p class="slider-descr__text">Calculating how many years, months and days a user is today  </p>
+                                   <div class="slider-descr__items-wrapper">
+                                        <p>made with:</p>
+                                        <div class="slider-descr__icons">
+                                            <!--#include virtual="/parts/_html-svg.html" -->
+                                            <!--#include virtual="/parts/_sass-svg.html" -->
+                                            <!--#include virtual="/parts/_js-svg.html" -->
+                                            <!--#include virtual="/parts/_bootstrap-svg.html" -->
+                                            <!--#include virtual="/parts/_responsive-svg.html" -->
+                                        </div>
+                                   </div>
+
+
+                                    <div class="slider-descr__items-wrapper">
+                                        <div class="slider-descr__links">
+
+                                            <a href="https://eugene0408.github.io/age-counter-JS" 
+                                                target="_blank" 
+                                                class="slider-link">
+
+                                                LiveSite <!--#include virtual="/parts/_internet-svg.html" -->
+
+                                            </a>
+                                            <div class="red-separator"></div>
+
+                                            <a href="https://github.com/eugene0408/age-counter-JS"
+                                                target="_blank" 
+                                                class="slider-link">
+
+                                                <!--#include virtual="/parts/_github-svg.html" -->
+                                                GitHub 
+
+                                            </a>
+
                                         </div>
                                     </div>
 

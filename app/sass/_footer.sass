@@ -80,8 +80,9 @@
         float: right
         display: flex
         flex-direction: column
-        &:hover
-            transform: translateZ(40px)
+        +media-breakpoint-up(md)
+            &:hover
+                transform: translateZ(40px)
         h2
             font-family: $open-sans
             font-weight: 700
@@ -94,13 +95,14 @@
             margin-top: .5em
             z-index: 10
             transition: all .2s ease
-            &:hover
-                transform: scale(1.05)
-                .footer-contacts__item-header
-                    svg
-                        background: $orange
-                        path 
-                            fill: #000
+            +media-breakpoint-up(md)
+                &:hover
+                    transform: scale(1.05)
+                    .footer-contacts__item-header
+                        svg
+                            background: $orange
+                            path 
+                                fill: #000
         &__item-header
             svg
                 padding: .3em
@@ -131,12 +133,22 @@
                     width: 35px
                     transition: all .2s ease-in
                     padding: 4px
-      
-                &:hover
-                    img 
-                        transform: scale(1.15)
+                +media-breakpoint-up(md)
+                    &:hover
+                        img 
+                            transform: scale(1.15)
 
-
+    +media-breakpoint-down(xxl)
+        height: 420px
+        &__avatar 
+            &__image
+                height: 120px
+                width: 120px
+            &__title
+                font-size: 25px
+        &__contacts
+            h2 
+                font-size: 25px
     +media-breakpoint-down(lg)      
         height: 350px
         &-avatar
@@ -199,23 +211,27 @@
     font-weight: 300
     display: flex
     justify-content: center
+    font-size: 14px
     a
         margin-left: .5em
         display: flex
         align-items: center
+        font-size: 16px
         svg
             margin-right: .2em
-            height: 22px
-            width: 22px
+            height: 18px
+            width: 18px
             fill: $red
             transition: .2s ease
-        &:hover
-            svg
-                fill: $orange
+        +media-breakpoint-up(md)
+            &:hover
+                svg
+                    fill: $orange
     +media-breakpoint-down(sm)
         margin-top: 40%
 .copyright
     p
+        font-size: 14px
         text-align: center
         font-family: $open-sans
         font-weight: 300

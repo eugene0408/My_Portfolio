@@ -113,19 +113,25 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 	// Tilt Animations 
-	VanillaTilt.init(document.querySelectorAll('.skill-tilt'),{
-		max: 40,
-		speed: 400,
-	});
 
-	VanillaTilt.init(document.querySelectorAll(['.slider-screen', '.slider-descr__items-wrapper', '.mail-form__button']),{
-		speed: 700,
-	});
+	if(screenWidth > 768){
 
-	VanillaTilt.init(document.querySelector('footer'),{
-		speed: 600,
-		max: 10,
-	});
+		VanillaTilt.init(document.querySelectorAll('.skill-tilt'),{
+			max: 40,
+			speed: 400,
+		});
+	
+		VanillaTilt.init(document.querySelectorAll(['.slider-screen', '.slider-descr__items-wrapper', '.mail-form__button']),{
+			speed: 700,
+		});
+	
+		VanillaTilt.init(document.querySelector('footer'),{
+			speed: 600,
+			max: 10,
+		});
+
+	}
+
 
 });
 

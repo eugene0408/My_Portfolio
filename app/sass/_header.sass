@@ -59,19 +59,17 @@
             font-size: 22px 
         .orange
             transition: .4s ease-in
-
- 
-    .topline-menu__item:hover
-        span
-            opacity: 1
-        .left
-            transform: translateX(0) 
-        .right
-            transform: translateX(0)
-        .orange
-            transform: translateY(0)
-  
-    +media-breakpoint-down(xl)
+    +media-breakpoint-up(md)
+        .topline-menu__item:hover
+            span
+                opacity: 1
+            .left
+                transform: translateX(0) 
+            .right
+                transform: translateX(0)
+            .orange
+                transform: translateY(0)
+    +media-breakpoint-down(xxl)
         height: 60px
         padding: .3em
         .avatar
@@ -146,20 +144,21 @@
         transition: .3s
         .left, .right
             color: #fff
-    &:hover
-        background: rgba($red, 1)
-        .topline-git__icon
-            svg
-                fill: #fff
-        .topline-git__text
-            color: #fff
-            span 
-                opacity: 1
-            .left, .right
-                transform: translateX(0)
-            .slash, .underline
-                transform: translateY(0)
-    +media-breakpoint-down(xl)
+    +media-breakpoint-up(md)
+        &:hover
+            background: rgba($red, 1)
+            .topline-git__icon
+                svg
+                    fill: #fff
+            .topline-git__text
+                color: #fff
+                span 
+                    opacity: 1
+                .left, .right
+                    transform: translateX(0)
+                .slash, .underline
+                    transform: translateY(0)
+    +media-breakpoint-down(xxl)
         height: 60px
         &__icon
             height: 28px 

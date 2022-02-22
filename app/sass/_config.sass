@@ -96,9 +96,9 @@ body
 	overflow-x: hidden
 a
 	text-decoration: none
-	color: #000
+	color: $textcolor
 	&:hover, &:focus
-		color: #000
+		color: $textcolor
 ul 
 	list-style: none
 .red
@@ -117,7 +117,7 @@ ul
 	background: rgba(#000, .6)
 
 .sect-header
-	font-size: 32px
+	font-size: 28px
 	font-family: $open-sans
 	font-weight: 700
 	text-align: center
@@ -127,13 +127,14 @@ ul
 	position: relative
 	.left, .right
 		font-size: 36px
-	&:hover
-		span 
-			opacity: 1
-		.left, .right
-			transform: translateX(0)
-		.slash, .underline
-			transform: translateY(0)
+	+media-breakpoint-up(md)
+		&:hover
+			span 
+				opacity: 1
+			.left, .right
+				transform: translateX(0)
+			.slash, .underline
+				transform: translateY(0)
 	+media-breakpoint-down(lg)
 		font-size: 28px
 		padding-bottom: 2em
@@ -160,7 +161,6 @@ ul
 .pos-rel
 	position: relative
 
-
-
-	
+.ofl-vis
+	overflow: visible
 

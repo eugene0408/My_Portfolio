@@ -47,13 +47,14 @@
             border: none
             span
                 transition: .3s ease
-            &:hover
-                background-color: $red
-                color: #fff
-                box-shadow: 0 0 15px rgba(#000, .35)
-                span
-                    transform: translateZ(25px)
-        +media-breakpoint-down(lg)
+            +media-breakpoint-up(md)
+                &:hover
+                    background-color: $red
+                    color: #fff
+                    box-shadow: 0 0 15px rgba(#000, .35)
+                    span
+                        transform: translateZ(25px)
+        +media-breakpoint-down(xxl)
             width: 380px      
             &__button
                 font-size: 18px
