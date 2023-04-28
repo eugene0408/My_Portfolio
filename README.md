@@ -6,4 +6,4 @@ My portfolio website
 -animations on scroll  
 -responsive design  
 
-Website: https://eugenelemak.netlify.app
+Website: https://lemakeug.netlify.app
